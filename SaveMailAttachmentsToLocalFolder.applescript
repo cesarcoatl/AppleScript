@@ -15,12 +15,8 @@ using terms from application "Mail"
 				--set the sub folder for the attachments to the mail's subject.
 				set subFolder to (subject of eachMessage)
 				
-				-- set up the folder name for this mail message's attachments. We use the time stamp of the  date received time stamp
-				--set {year:y, month:m, day:d, hours:h, minutes:min} to eachMessage's date received
 				set {year:y, month:m, day:d, hours:h, minutes:min, seconds:sec} to eachMessage's date received
 				
-				---set timeStamp to (y & "-" & my pad(d) & "-" & my pad(m as integer) & "_" & my pad(h) & "-" & my pad(min)) as string -- month as number
-				--set timeStamp to (y & "_" & my pad(d) & "-" & m & "_" & my pad(h) & "-" & my pad(min)) as string
 				set timeStamp to (y & "-" & my pad(m as integer) & "-" & my pad(d) & "_" & my pad(h) & "-" & my pad(min) & "-" & my pad(sec) & "_") as string
 				
 				set attachCount to count of (mail attachments of eachMessage)
